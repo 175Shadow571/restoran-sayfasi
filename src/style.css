@@ -1,0 +1,183 @@
+/*
+    josh's Custom CSS Reset
+    https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+/* Daha sezgisel kutu boyutlandırma
+margin ve padding ide boyutun içinden sayar */
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+/* Margin sıfırlama */
+*{
+    margin: 0;
+}
+body{
+    /* Satır aralığı */
+    line-height: 1.5;
+    /* Yazı cilalama */
+    -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg{
+    display: block;
+    max-width: 100%;
+}
+input, button, textarea, select{
+    font: inherit;
+}
+/* Metin taşmalarını önlemek için */
+p, h1, h2, h3, h4, h5, h6{
+    overflow-wrap: break-word;
+}
+/* Satır kaydırma iyileştirme */
+p{
+    text-wrap:balance;
+}
+/********************************************/
+
+@font-face {
+    font-family: baslik;
+    src: url(./fonts/Damion/Damion-Regular.ttf);
+}
+@font-face {
+    font-family: benimYaziTipim;
+    src: url(./fonts/Mogra/Mogra-Regular.ttf);
+}
+
+body{
+    background-color: #96796a;
+    height: 100%;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding: 18px;
+    background-image: url(./images/koltukheader.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #313131;
+    height: 100px;
+    
+}
+header>h1{
+    font-family: "baslik",'Courier New', Courier, monospace;
+    font-size: 2.4rem;
+}
+header>nav{
+    display: flex;
+    gap: 40px;
+}
+header button{
+    background-color: transparent;
+    border:0;
+    font-family: "benimYaziTipim",sans-serif;
+    transform: scale(1);
+    transition: transform 0.1s linear;
+    color: #313131;
+    z-index: 2;
+}
+
+.yastikSVG{
+    position: absolute;
+    width: 105px;
+    top: 20px;
+    z-index: 0;
+    transform: scale(1);
+    transition: transform 0.1s linear;
+}
+.yastikSVG0{
+    right: 12px;
+}
+.yastikSVG1{
+    right: 132px;
+}
+.yastikSVG2{
+    right: 255px;
+}
+.yastikAnimation{
+    transform: scale(1.1);
+    transition: transform 0.1s linear;
+}
+.svgKapaliDolap{
+    display: none;
+}
+
+@media (max-width: 715px) {
+    header nav{
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.550);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        top: 110px;
+        right: 6px;
+        width: 150px;
+        height: 300px;
+        border-radius: 15px;
+        transform: translate(500px,0);
+        transition: transform 1s ease;
+    } 
+    .menuAcik{
+        transform: translate(0,0);
+        transition: transform 1s ease;
+    }
+
+
+
+    .kapsayici{
+        perspective: 1000px;
+    }
+    .flipBox{
+        width: 100px;
+        height: 100px;
+        position: relative;
+    }
+    .flipBoxInner{
+        position:relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+    .flipBoxAcik, .flipBoxKapali{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+    }
+    .flipBoxAcik img, .flipBoxKapali img{
+        width: 100%;
+        height: 100%;
+    }
+    .flipBoxKapali{
+        transform: rotateY(180deg);
+    }
+    .flipped{
+        transform: rotateY(180deg);
+    }
+
+
+
+
+    nav button{
+        color: #fff;
+    }
+    .yastikSVG{
+        right: 23px;
+    }
+    .yastikSVG0{
+        top: 222px;
+    }
+    .yastikSVG1{
+        top: 122px;
+    }
+    .yastikSVG2{
+        top: 20px;
+    }
+    header>h1{
+        font-size: 2rem;
+    }
+    
+}

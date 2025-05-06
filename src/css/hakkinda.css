@@ -1,0 +1,36 @@
+.hakkinda{
+    background-image: url(../images/imgHakkinda.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right 15% top 0;
+    min-height: 100vh;
+    animation: acilis 1s linear ;
+    color: #ffff;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+}
+.hakkinda>div{
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.685);
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 50px;
+    animation: yaziAcilis 2s linear alternate;
+}
+
+@keyframes acilis{
+    from{
+        background-position: right 50px top 0px;
+    }to{
+        background-position: right 15% top 0;
+
+    }
+}
+@keyframes yaziAcilis {
+    0%{transform:translate(-3000px,0px);}
+    30%{transform: translate(-3000px,0px);}
+    100%{transform: translate(0px,0px);}
+}
