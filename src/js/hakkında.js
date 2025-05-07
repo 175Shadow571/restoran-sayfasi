@@ -1,8 +1,4 @@
 export default function hakkinda(){
-    // ******************* sayfa varmı kontrol *******************
-    if(document.querySelector(".hakkinda")){
-        return
-    }
     // ******************* document seç ********************
     document.querySelector(".content").classList.add("hakkinda")
     const classHakkinda = document.querySelector(".hakkinda") 

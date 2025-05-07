@@ -2,10 +2,10 @@
 import anasayfa from "./js/anaSayfa";
 import katalog from "./js/katalog";
 import hakkında from "./js/hakkında";
-
 // ********* css içe Aktar ************
 import "./style.css";
 import "./css/hakkinda.css"
+import "./css/anaSayfa.css"
 
 // ******** resim içe Akartar *******
 import yastikSvg from "./images/yastik.svg"
@@ -17,14 +17,19 @@ import menuDolapAcik from "./images/svgDolapAcik.svg"
 (() =>{
     
     // ****************** DOM seçiciler ******************
+    const body = document.querySelector("body")
     const header = document.querySelector("header")
     const nav = document.querySelector("nav")
-
+    const content = document.querySelector(".content")
     // **Buttonlar**
     const btnAnasayfa = document.querySelector("#btnAnaSayfa")
     const btnKatalog = document.querySelector("#btnKatalog")
     const btnHakkında = document.querySelector("#btnHakkında")
 
+    // *******************************************
+    new anasayfa()
+    sayfaSonu()
+    //*********************************************
     // ****************** Dom Oluştur ********************
 
     // **hader imge menü**
@@ -104,10 +109,22 @@ import menuDolapAcik from "./images/svgDolapAcik.svg"
     })
 
 
-    // ***************** Sayfa geçişleri ******************
+    // **Sayfa geçişleri**
     btnHakkında.addEventListener("click", ()=>{
         menuKapat()
-        hakkında()
+        if(content.className !== "content hakkinda"){
+            content.classList = "content"
+            content.innerHTML = ""
+            hakkında()
+        }
+    })
+    btnAnasayfa.addEventListener("click", ()=>{
+        menuKapat()
+        if(content.className !== "content anaSayfa"){
+            content.classList = "content"
+            content.innerHTML = ""
+            new anasayfa()
+        }
     })
 
 
@@ -119,6 +136,15 @@ import menuDolapAcik from "./images/svgDolapAcik.svg"
     function menuKapat(){
         div3.classList.remove("flipped")
         nav.classList.remove("menuAcik")
+    }
+
+    function sayfaSonu(){
+        const div = document.createElement("div")
+        div.classList.add("sayfaSonu")
+        const h1 = document.createElement("h1")
+        h1.textContent = "Sayfanın Sonuna Geldiniz."
+        div.appendChild(h1)
+        body.appendChild(div)
     }
 })();
 

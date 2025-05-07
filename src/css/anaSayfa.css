@@ -1,0 +1,250 @@
+@font-face {
+    font-family: rubik-maps;
+    src: url(../fonts/Rubik_Maps/RubikMaps-Regular.ttf);
+}
+.anaSayfa{
+    background-color: black;
+    color: #fff;
+   
+}
+
+
+/******* Sayfa Geneli Ayarla **********/
+.anaSayfa>div{
+    display: flex;
+    justify-content: center;
+    box-shadow: inset 0 0 10px 2px rgb(119, 119, 119);
+    padding: 30px 25px;
+    position: relative;
+}
+.anaSayfa>div h3{
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    left: 15%;
+    font-family: rubik-maps,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-variant: small-caps;
+    color: rgb(46, 46, 46);
+    background-color: #ffffffc4;
+    border-radius: 15px;
+    padding: 0 12px;
+
+    animation: renkAnimasyonu 4s ease infinite;
+}
+.anaSayfa>div>div{
+    flex: 1;
+    display: flex;
+    border-radius: 30px;
+    background-size: cover;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    z-index: 2;
+}
+.anaSayfa>div>div>div{
+    box-shadow: 0 0 15px 2px black;
+    border-radius:12px;
+    padding: 12px;
+    pointer-events: none;
+}
+.anaSayfa p{
+    font-size: 1.3rem;
+}
+
+/**yazi renk Animasyonu**/
+@keyframes renkAnimasyonu{
+    0%{
+        background-color: #ffffffc4;
+        color:black;
+    }
+    50%{
+        background-color: #000000c4;
+        color: #ffffff;
+    }
+    100%{
+        background-color: #ffffffc4;
+        color:black;
+    }
+}
+/**Kart Animasyonu**/
+.anaSayfa>div>div{
+    transform: translateX(-90vw);
+}
+
+.anaSayfa .kartHareketi{
+    animation: kartHareketi 4s linear infinite;
+}
+.anaSayfa .kartAcilisi{
+    animation: kartAcilisi 0.8s linear;
+}
+.anaSayfa .kartSabitleme{
+    animation: normal;
+    transform: translateX(0);
+}
+.anaSayfa .kartKapanisi{
+    animation: kartKapanisi 0.8s linear;
+}
+@keyFrames kartHareketi{
+    25%{transform: translateX(-85vw);}
+    50%{transform: translateX(-90vw);}   
+}
+@keyframes kartAcilisi{
+    100%{transform: translateX(0);}
+}
+
+@keyframes kartKapanisi{
+    0%{transform: translateX(0);}
+    100%{transform: translateX(-90vw);}
+}
+
+
+/** birinci kısım **/
+.anaSayfa .div0{
+    background-color: #af9d83;
+    height: 600px;
+}
+.anaSayfa .div0>div{
+    background-image: url(../images/koltukUretimi.png);
+    background-size: cover;
+    background-position: center;
+    box-shadow:inset 0 0 15px 5px #ffffff;
+    flex-direction: column;
+    align-items: end;
+}
+.text1{
+    width: 45%;
+    margin: 0 18px;
+    margin-top: 2vw;
+    background-color: #af9d83b7;
+    color: #000000;
+    
+}
+
+
+/** ikinci kısım **/
+.anaSayfa .div1{
+    background-color: #696258;
+    height: 450px;
+}
+.anaSayfa .div1>div{
+    background-image: url(../images/kaliteliKoltuk.png);
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    box-shadow:inset 0 0 15px 5px rgb(46, 46, 46);
+
+}
+.text2{
+    background-color: #3f3b34b9;
+    width: 60%;
+    margin: 28px;
+}
+
+
+/** üçüncü kısım **/
+.anaSayfa .div2{
+   height: 400px;
+   background-color: #fcecd5;
+}
+.anaSayfa .div2>div{
+    background-image: url(../images/rehatEvOrtami.jpg);
+    background-position: center;
+    justify-content: center;
+    align-items: start;
+    box-shadow:inset 0 0 15px 5px #464646;
+
+}
+.text3{
+    margin-top: 30px;
+    background-color: #a79a88d5;
+    width: 70%;
+    color: rgb(14, 14, 14);
+}
+
+
+
+
+/** dördüncü kısım **/
+.anaSayfa .div3{
+   height: 400px;
+   background-color: #a8a8a8;
+}
+.anaSayfa .div3>div{
+    background-image: url(../images/sozlesme.jpg);
+    justify-content: center;
+    align-items: start;
+    box-shadow:inset 0 0 15px 4px #ffffff;
+
+}
+.text4{
+    margin-top: 50px;
+    background-color: #332f28c4;;
+    width: 60%;
+}
+
+
+
+/** beşinci kısım **/
+.anaSayfa .div4{
+    height: 400px;
+    background-color: #c39b72;
+}
+.anaSayfa .div4>div{
+    background-image: url(../images/tasarımKartela.jpg);
+    background-position: center;
+    justify-content: center;
+    align-items: end;
+}
+.text5{
+    width: 75%;
+    background-color: #e7ac71c2;
+    color: black;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 715px){
+    .anaSayfa h1{
+        font-size: 1.2rem;
+    }
+    .anaSayfa p{
+        font-size: 1rem;
+    }
+
+
+    .anaSayfa>div>div>div{
+        width: 85%;
+        margin: 0;
+    }
+
+
+
+    
+    .anaSayfa .div0>div{
+        align-items: center;
+    }
+    .div0>div .text1{
+        margin-top: 34px;
+    }
+
+
+
+
+    .anaSayfa .div1>div{
+        align-items: center;
+    }
+
+
+    .anaSayfa .div2>div{
+        align-items: center;
+    }
+
+    .anaSayfa .div3>div{
+        background-position: center;
+        align-items: center;
+    }
+
+ 
+    .anaSayfa .div4>div{
+        align-items: center;
+    }
+}
