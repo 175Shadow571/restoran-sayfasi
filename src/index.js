@@ -6,6 +6,7 @@ import hakkında from "./js/hakkında";
 import "./style.css";
 import "./css/hakkinda.css"
 import "./css/anaSayfa.css"
+import "./css/katalog.css"
 
 // ******** resim içe Akartar *******
 import yastikSvg from "./images/yastik.svg"
@@ -124,6 +125,14 @@ import menuDolapAcik from "./images/svgDolapAcik.svg"
             content.classList = "content"
             content.innerHTML = ""
             new anasayfa()
+        }
+    })
+    btnKatalog.addEventListener("click", ()=>{
+        menuKapat()
+        if(content.className !== "content katalog"){
+            content.classList = "content"
+            content.innerHTML = ""
+            new katalog()
         }
     })
 

@@ -24,8 +24,6 @@ export default class{
             const div3 = document.createElement("div")
             const h1 = document.createElement("h1")
             const p = document.createElement("p")
-            const h3 = document.createElement("h3")
-            h3.textContent = "<= Tıkla!"
             h1.textContent = obj.baslik
             p.textContent = obj.text
             div3.classList.add(obj.class)
@@ -34,7 +32,6 @@ export default class{
             div3.appendChild(p)
             this.classAnaSayfa.appendChild(div1)
             div1.appendChild(div2)
-            div1.appendChild(h3)
             div2.appendChild(div3)
             div2.classList.add("kartHareketi")
 

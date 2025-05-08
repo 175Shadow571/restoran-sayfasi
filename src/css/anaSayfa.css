@@ -17,22 +17,6 @@
     padding: 30px 25px;
     position: relative;
 }
-.anaSayfa>div h3{
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 3rem;
-    left: 15%;
-    font-family: rubik-maps,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-variant: small-caps;
-    color: rgb(46, 46, 46);
-    background-color: #ffffffc4;
-    border-radius: 15px;
-    padding: 0 12px;
-
-    animation: renkAnimasyonu 4s ease infinite;
-}
 .anaSayfa>div>div{
     flex: 1;
     display: flex;
@@ -51,21 +35,7 @@
     font-size: 1.3rem;
 }
 
-/**yazi renk Animasyonu**/
-@keyframes renkAnimasyonu{
-    0%{
-        background-color: #ffffffc4;
-        color:black;
-    }
-    50%{
-        background-color: #000000c4;
-        color: #ffffff;
-    }
-    100%{
-        background-color: #ffffffc4;
-        color:black;
-    }
-}
+
 /**Kart Animasyonu**/
 .anaSayfa>div>div{
     transform: translateX(-90vw);
@@ -202,12 +172,21 @@
     margin-bottom: 30px;
 }
 
-@media (max-width: 715px){
+@media (max-width: 800px){
     .anaSayfa h1{
         font-size: 1.2rem;
     }
     .anaSayfa p{
         font-size: 1rem;
+    }
+
+    /*Animasyon Ayarı*/
+    .anaSayfa>div>div{
+        transform: translateX(-75vw);
+    }
+    @keyFrames kartHareketi{
+        25%{transform: translateX(-70vw);}
+        50%{transform: translateX(-75vw);}   
     }
 
 
